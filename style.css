@@ -76,16 +76,18 @@ article,
     transition: all .2s;
 }
 
-
+.no-book,
+.library {
+    border-radius: 5px;
+    background-color: var(--no-book-bg);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, .1);
+}
 
 /* NO BOOK */
 .no-book {
     width: 100%;
     margin: 0 auto;
     padding: 2rem 4rem;
-    border-radius: 5px;
-    background-color: var(--no-book-bg);
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, .1);
     
     display: flex;
     align-items: center;
@@ -104,6 +106,8 @@ article,
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 2rem 1.5rem;
+
+    padding: 2rem 3rem;
 }
 
 article {
