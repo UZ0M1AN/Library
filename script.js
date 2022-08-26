@@ -21,7 +21,7 @@ function addToLibrary(book) {
     myLibrary.push(book);
 }
 
-function displayBook() {
+function displayBooks() {
     myLibrary.forEach(book => log(book))
 }
 //////////////////////////////////////////////////////////////////////////////
