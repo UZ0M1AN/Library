@@ -1,0 +1,215 @@
+/* FONT FAMILY */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --body-bg: linear-gradient(to bottom, hsl(186, 94%, 82%), hsl(186, 94%, 72%), hsl(186, 94%, 69%));
+    --body-text: hsl(196, 64%, 24%);
+    --library-bg: hsl(186, 92%, 78%);
+    --h1: hsl(192, 91%, 36%);
+    --h1-dark: hsl(192, 91%, 30%);
+    /* --secondary: hsl(245, 58%, 51%); */
+    --no-book-bg: hsl(186, 92%, 83%);
+}
+
+body {
+    color: var(--body-text);
+    background-image: var(--body-bg);
+    font-family: 'Merriweather', serif;
+
+    min-height: 100vh;
+}
+
+/* Page Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--body-bg);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: hsl(186, 94%, 55%);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(186, 94%, 50%);
+  }
+
+/* WEB PAGE */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+
+    width: 80%;
+    margin: 9.6rem auto;
+    
+}
+
+h1 {
+    font-size: 3.6rem;
+    color: var(--h1);
+}
+
+article,
+.read,
+.new-book button {
+    transition: all .2s;
+}
+
+
+
+/* NO BOOK */
+.no-book {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    border-radius: 5px;
+    background-color: var(--no-book-bg);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, .1);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-book p {
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--h1);
+}
+
+/* LIBRARY */
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem 1.5rem;
+}
+
+article {
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--h1);
+    background-color: var(--library-bg);
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+article:hover {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1),
+                0 2px 6px 2px rgba(0, 0, 0, .1);
+    transform: translateY(-1px);
+}
+
+/* article:nth-child(1)::after {
+    content: 'read';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 2px 6px;
+    background-color: var(--body-text);
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: var(--no-book-bg);
+    border-radius: 3px;
+} */
+
+.img {
+    /* background-image: url(); */
+    height: 15rem;
+    background-image: linear-gradient(to bottom, hsl(192, 91%, 66%), hsl(192, 91%, 36%));
+    border-bottom: 1px solid var(--h1);
+    border-radius: 5px;
+}
+
+/* LIBRARY >>> CONTENT */
+
+.cnt {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    font-size: 1.8rem;
+    padding: 1.5rem;
+}
+
+.cnt p {
+    display: flex;
+    gap: 2rem;
+}
+
+.read {
+    align-self: flex-end;
+    font-size: 2rem;
+}
+
+.read:hover {
+    color: var(--h1);
+}
+
+/* LIBRARY >>> ADD NEW BOOK */
+
+.new-book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+}
+
+.new-book button {
+    background-color: transparent;
+    color: var(--h1);
+    border: none;
+    padding: .5rem 1rem;
+    font-size: 1.8rem;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.new-book button .plus {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1.2rem;
+    background-color: var(--no-book-bg);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-book button:hover {
+    border-bottom: 1px solid var(--h1-dark);
+    color: var(--h1-dark);
+    transform: translateY(-1px);
+}
+
+.new-book button:hover .plus {
+    background-color: var(--body-text);
+    color: var(--no-book-bg); 
+}
