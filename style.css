@@ -19,7 +19,8 @@ html {
     --book-bg: hsl(186, 92%, 78%);
     --h1: hsl(192, 91%, 36%);
     --h1-dark: hsl(192, 91%, 30%);
-    /* --secondary: hsl(245, 58%, 51%); */
+    --secondary: hsl(0, 70%, 35%);
+    --secondary-lt: hsl(0, 70%, 51%);
     --library-bg: hsl(186, 93%, 83%);
     --library-bg-transparent: hsla(186, 93%, 83%, .3);
 }
@@ -73,14 +74,20 @@ h1 {
 
 article,
 .read,
-.new-book button {
+button {
     transition: all .2s;
 }
 
 .no-book,
-.library {
+.library,
+form {
     border-radius: 5px;
     box-shadow: 2px 3px 4px rgba(0, 0, 0, .1);
+}
+
+form h2,
+.close-btn {
+    font-size: 2.5rem;
 }
 
 /* NO BOOK */
@@ -106,10 +113,10 @@ article,
 .library {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 2rem 1.5rem;
+    gap: 3rem 1.5rem;
 
-    padding: 2rem 3rem;
-    background-color: var(--library-bg-transparent);
+    padding: 4rem 3rem 2rem;
+    background-color: var(--library-bg);
 }
 
 article {
@@ -130,8 +137,7 @@ article:hover {
     transform: translateY(-1px);
 }
 
-/* article:nth-child(1)::after {
-    content: 'read';
+span.read-tag {
     position: absolute;
     top: -5px;
     right: -5px;
@@ -141,12 +147,12 @@ article:hover {
     font-size: 1.2rem;
     color: var(--library-bg);
     border-radius: 3px;
-} */
+}
 
 .img {
-    /* background-image: url(); */
+    background-position: center;
+    background-size: cover;
     height: 15rem;
-    background-image: linear-gradient(to bottom, hsl(192, 91%, 66%), hsl(192, 91%, 36%));
     border-bottom: 1px solid var(--h1);
     border-radius: 5px;
 }
@@ -172,8 +178,16 @@ article:hover {
     font-size: 2rem;
 }
 
-.read:hover {
+.read [class*="eye"]:hover {
     color: var(--h1);
+}
+
+.fa-circle-minus {
+    color: var(--secondary);
+}
+
+.fa-circle-minus:hover {
+    color: var(--secondary-lt);
 }
 
 /* LIBRARY >>> ADD NEW BOOK */
@@ -218,4 +232,101 @@ article:hover {
 .new-book button:hover .plus {
     background-color: var(--body-text);
     color:  var(--library-bg);
+}
+
+/* FORM */
+form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    padding: 2rem 3rem;
+    background-color: var(--library-bg);
+    font-size: 1.8rem;
+    width: 40%;
+}
+
+form h2 {
+    margin-bottom: 2rem;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    margin-bottom: 2rem;
+}
+
+.form-inputs > div:not(.book-read) {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.book-read {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.form-inputs input {
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1.8rem;
+}
+
+[type='checkbox'] {
+    border: none;
+    width: 1.8rem;
+    height: 1.8rem;
+    outline: none;
+}
+
+
+form button {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 2rem;
+    border: none;
+    background-color: var(--h1-dark);
+    border-radius: 8px;
+    color: #eee;
+    outline: none;
+}
+
+form button:hover {
+    transform: translateY(-1px);
+}
+
+.close-btn {
+    font-size: 2.5rem;
+    color: var(--secondary);
+      
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+}
+
+.close-btn:hover {
+    color: var(--secondary-lt);
+}
+
+/* HELPERS */
+.overlay {
+    background-color: rgba(0, 0, 0, .5);
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+
+    position: fixed;
+    top: 0;
+}
+
+.no-display {
+    display: none;
 }

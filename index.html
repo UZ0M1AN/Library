@@ -12,41 +12,58 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div class="overlay no-display"></div>
     <div class="container">
         <h1>My Very Own Library</h1>
 
         <div class="no-book">
-            <p>No book in your library</p>
+            <p>No books in your library</p>
         </div>
 
-     <!-- <section class="library">
-       <article>
+        <form action="#" class="no-display">
+            <h2>Add New Book</h2>
+
+            <div class="form-inputs">
+                <div class="book-title">
+                    <label for="title">*Title:</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+                <div class="book-author">
+                    <label for="author">*Author:</label>
+                    <input type="text" name="author" id="author" required>
+                </div>
+                <div class="book-pages">
+                    <label for="pages">*Number of pages:</label>
+                    <input type="tel" name="pages" id="pages" required>
+                </div>
+                <div class="book-img">
+                    <label for="img">Book Image URL:</label>
+                    <input type="url" name="img" id="img">
+                </div>
+
+                <div class="book-read">
+                    <label for="read">Read:</label>
+                    <input type="checkbox" name="read" id="read">
+                </div>
+            </div>
+
+            <button>Add Book</button>
+
+            <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
+        </form>
+
+     <section class="library no-display">
+        <!-- <article>
             <div class="img"></div>
             <div class="cnt">
                 <p class="title"><i class="fa-solid fa-book"></i><span>Things Fall Apart</span></p>
                 <p class="author"><i class="fa-solid fa-pen-clip"></i><span>Chinua Achebe</span></p>
                 <p class="pages"><i class="fa-solid fa-file"></i><span>300 pages</span></p>
-                <p class="read"><i class="fa-solid fa-eye"></i></p>
-                <p class="read"><i class="fa-solid fa-eye-slash"></i></p> 
+                <p class="read"><i class="fa-solid fa-eye"></i><i class="fa-solid fa-circle-minus"></i></p>
+                <span class="read-tag no-display">read</span>
             </div>
-        </article>
-        <article>
-            <div class="img"></div>
-            <div class="cnt">
-                <p class="title"><i class="fa-solid fa-book"></i><span>Things Fall Apart</span></p>
-                <p class="author"><i class="fa-solid fa-pen-clip"></i><span>Chinua Achebe</span></p>
-                <p class="pages"><i class="fa-solid fa-file"></i><span>300 pages</span></p>
-            </div>
-        </article>
-        <article>
-            <div class="img"></div>
-            <div class="cnt">
-                <p class="title"><i class="fa-solid fa-book"></i><span>Things Fall Apart</span></p>
-                <p class="author"><i class="fa-solid fa-pen-clip"></i><span>Chinua Achebe</span></p>
-                <p class="pages"><i class="fa-solid fa-file"></i><span>300 pages</span></p>
-            </div>
-        </article>
-    </section> -->
+        </article> -->
+    </section>
 
     <section class="new-book">
         <button><span>Add New Book</span><span class="plus"><i class="fa-solid fa-plus"></i></span></button>
