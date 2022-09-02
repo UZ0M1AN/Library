@@ -177,6 +177,7 @@ span.read-tag {
 
 .cnt p {
     display: flex;
+    align-items: center;
     gap: 2rem;
 }
 
